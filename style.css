@@ -1,0 +1,183 @@
+:root {
+    --bg-color: #fcf8f2; /* Soft warm paper tone */
+    --line-color: #bcd4e6; /* Classic loose-leaf blue lines */
+    --margin-color: #fbc4b6; /* Soft pink vertical line */
+    --text-color: #333333;
+    --font-handwritten: 'Caveat', cursive;
+    --font-clean: 'Patrick Hand', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e6dfd3;
+    font-family: var(--font-clean);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+/* Notebook Base (Fits Mobile Perfectly) */
+.notebook-container {
+    background-color: var(--bg-color);
+    width: 100%;
+    max-width: 400px;
+    height: 92vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Loose Leaf Hole Punching Aesthetic */
+.binder-holes {
+    width: 35px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    border-right: 2px solid var(--margin-color);
+    z-index: 5;
+    background-color: var(--bg-color);
+}
+
+.hole {
+    width: 14px;
+    height: 14px;
+    background-color: #e6dfd3; /* Matches the back screen background */
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Pages Layout & Ruled Blue Lines */
+.notebook-pages {
+    flex: 1;
+    position: relative;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px 20px 15px;
+    background-image: linear-gradient(var(--line-color) 1px, transparent 1px);
+    background-size: 100% 28px; /* Height of each rule line */
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+}
+
+/* Notebook Header (No. and Date) */
+.notebook-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #888;
+    border-bottom: 1px solid var(--line-color);
+    padding-bottom: 4px;
+    margin-bottom: 24px;
+}
+
+.page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Lets long letters scroll gracefully */
+}
+
+.center-content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Typography styles matching the sketch */
+.main-title {
+    font-family: var(--font-handwritten);
+    font-size: 2.5rem;
+    margin: 15px 0;
+    color: #2b4c7e;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+.letter-heading {
+    font-family: var(--font-handwritten);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #b85a5a;
+}
+
+.letter-body {
+    font-size: 1.25rem;
+    line-height: 28px; /* Aligns perfectly with the ruled lines */
+    color: #333;
+}
+
+.letter-body p {
+    margin-bottom: 28px; /* Pushes text down exactly one line height */
+}
+
+.letter-footer {
+    margin-top: 20px;
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+/* Interactive Navigation Buttons */
+.nav-btn {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #fff0f3;
+    border: 2px dashed #fbc4b6;
+    border-radius: 20px;
+    font-family: var(--font-clean);
+    font-size: 1.1rem;
+    cursor: pointer;
+    align-self: center;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #fbc4b6;
+}
+
+.back-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: #999;
+}
+
+/* Simple Doodles Styling */
+.title-doodle, .cat-doodle {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}

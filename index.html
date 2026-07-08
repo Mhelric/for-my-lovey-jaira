@@ -3,9 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For my Lovey, Jaira</title>
+    <title>For My Lovey</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for that authentic handwritten look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <div class="notebook-container">
+        <!-- Loose-leaf binder holes on the left -->
+        <div class="binder-holes">
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+        </div>
+
+        <div class="notebook-pages">
+            <!-- PAGE 1: FRONT COVER -->
+            <div class="page active" id="page1">
+                <div class="notebook-header">
+                    <span class="header-no">No. 01</span>
+                    <span class="header-date">Date: 18 . 01 . 25</span>
+                </div>
+                
+                <div class="page-content center-content">
+                    <div class="title-doodle">✨ ⭐ ✨</div>
+                    <h1 class="main-title">For My Lovey Jaira</h1>
+                    <p class="subtitle">I made a little something for you... <br> Please open it. 🤍</p>
+                    <div class="cat-doodle">🐱 🐾</div>
+                    
+                    <button class="nav-btn" onclick="nextPage()">Read Letter →</button>
+                </div>
+            </div>
+
+            <!-- PAGE 2: THE LETTER -->
+            <div class="page" id="page2">
+                <div class="notebook-header">
+                    <span class="header-no">No. 02</span>
+                    <span class="header-date">Date: Today</span>
+                </div>
+
+                <div class="page-content">
+                    <h2 class="letter-heading">Dearest Jaira,</h2>
+                    
+                    <div class="letter-body">
+                        <!-- Replace this with your actual long apology letter -->
+                        <p>I wanted to write this to you because sometimes words are easier to keep forever when they are written down. I am deeply sorry for...</p>
+                        
+                        <p>You mean the absolute world to me, my comfort person, and seeing you upset is the last thing I ever want. I value everything about us so much.</p>
+                        
+                        <p>Thank you for your patience, your warmth, and for being the incredibly industrious, beautiful person you are. I love you more than words can say. 💕</p>
+                        
+                        <div class="letter-footer">
+                            <p>Always yours,</p>
+                            <p class="signature">Mhelric 🐱</p>
+                        </div>
+                    </div>
+
+                    <button class="nav-btn back-btn" onclick="prevPage()">← Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
